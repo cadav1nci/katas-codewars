@@ -58,7 +58,6 @@ def find_it(seq):
 """
 Kata level 8
 link: https://www.codewars.com/kata/58f8a3a27a5c28d92e000144
-
 """
 def first_non_consecutive(arr):
     if(len(arr)<=1):
@@ -68,4 +67,27 @@ def first_non_consecutive(arr):
             return arr[i+1]
     return None
 
+"""
+Kata level 6
+link: https://www.codewars.com/kata/515de9ae9dcfc28eb6000001/train/python
+"""
+# This solution is ineficient, it works tho
+def solution(s):
+    #this represents the number of steps for spliting the string
+    n = 2
+    solution = []
+    if len(s) == 0:
+        solution = []
+    elif  len(s) == 1:
+        s = s+"_"
+        solution.append(s)
+    elif len(s) % 2 == 0:
+        for i in range(0, len(s), n):
+            solution.append(s[i : i + n])
+    else:
+        s = s+"_"
+        for i in range(0, len(s), n):
+            solution.append(s[i : i + n])    
+            
+    return solution
 
